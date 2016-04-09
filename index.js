@@ -46,19 +46,16 @@ console.log(silence.name); // 'Silence'
 
 
 var Kitten = mongoose.model('Kitten', kittySchema);
-
 var fluffy = new Kitten({ name: 'fluffy' });
 fluffy.speak(); // "Meow name is fluffy"
-
 fluffy.save(function (err, fluffy) {
   if (err) return console.error(err);
   fluffy.speak();
 });
-
 Kitten.find(function (err, kittens) {
   if (err) return console.error(err);
   console.log(kittens);
 })
-
 Kitten.find({ name: /^Fluff/ }, function(){});
-//function is whatever is done afterwards
+
+	//function is whatever comes afterwards
