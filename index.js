@@ -30,12 +30,6 @@ var kittySchema = mongoose.Schema({
     name: String
 });
 
-
-var Kitten = mongoose.model('Kitten', kittySchema);
-
-var silence = new Kitten({ name: 'Silence' });
-console.log(silence.name); // 'Silence'
-
 // NOTE: methods must be added to the schema before compiling it with mongoose.model()
 kittySchema.methods.speak = function () {
   var greeting = this.name
@@ -43,6 +37,13 @@ kittySchema.methods.speak = function () {
     : "I don't have a name";
   console.log(greeting);
 }
+
+var Kitten = mongoose.model('Kitten', kittySchema);
+
+var silence = new Kitten({ name: 'Silence' });
+console.log(silence.name); // 'Silence'
+
+
 
 var Kitten = mongoose.model('Kitten', kittySchema);
 
