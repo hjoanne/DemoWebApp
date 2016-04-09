@@ -60,4 +60,5 @@ Kitten.find(function (err, kittens) {
   console.log(kittens);
 })
 
-Kitten.find({ name: /^Fluff/ }, callback);
+Kitten.find({ name: /^Fluff/ }, function(){});
+//function is whatever is done afterwards
